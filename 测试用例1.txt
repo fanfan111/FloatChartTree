@@ -1,0 +1,66 @@
+if (lw >= hg)
+{
+	return;
+}
+int first = lw;
+int last = hg;
+int key = RSelPivot(dta, lw, hg);
+do
+{
+	while (first < last && dta[last] >= key)
+	{
+		--last;
+	}
+	dta[first] = dta[last];
+	while (first < last && dta[first] <= key)
+	{
+		++first;
+	}
+	dta[last] = dta[first];	
+}while (first < last);
+dta[first] = key;
+
+
+
+
+
+
+if (lw >= hg){
+NodeNumber:0    nextNode:2   nodeNumT:1
+-*-*-*-*-
+	return;
+NodeNumber:1    nextNode:2
+-*-*-*-*-
+}
+int first = lw;
+int last = hg;
+int key = RSelPivot(dta, lw, hg);
+NodeNumber:2    nextNode:3
+-*-*-*-*-
+do (first < last){
+NodeNumber:3    nextNode:10   nodeNumT:4
+-*-*-*-*-
+while (first < last && dta[last] >= key){
+NodeNumber:4    nextNode:6   nodeNumT:5
+-*-*-*-*-
+		--last;
+NodeNumber:5    nextNode:4
+-*-*-*-*-
+}
+	dta[first] = dta[last];
+NodeNumber:6    nextNode:7
+-*-*-*-*-
+while (first < last && dta[first] <= key){
+NodeNumber:7    nextNode:9   nodeNumT:8
+-*-*-*-*-
+		++first;
+NodeNumber:8    nextNode:7
+-*-*-*-*-
+}
+	dta[last] = dta[first];	
+NodeNumber:9    nextNode:3
+-*-*-*-*-
+}
+dta[first] = key;
+NodeNumber:10    nextNode:-1
+-*-*-*-*-
